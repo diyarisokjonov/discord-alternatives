@@ -1,10 +1,10 @@
 ---
 import raw from "../../data/platforms.json";
 import discord from "../../data/discord.json";
-import { flatten } from "../lib/flatten";
+import { safeFlatten } from "../lib/flatten";
 import { getColumns } from "../lib/schema";
 
-const data = [flatten(discord), ...raw.map(flatten)];
+const data = [safeFlatten(discord), ...raw.map(safeFlatten)];
 const columns = getColumns();
 ---
 
@@ -180,22 +180,17 @@ const columns = getColumns();
 
                 <tbody>
                     {
-                        data.map((row) => (
-                            <tr>
+                        data.map((row, index) => (
+                            <tr key={`${row.name}-${index}`}>
                                 {columns.map((c) => {
                                     const val = row[c.key];
 
-                                    if (val === true) {
+                                    if (val === true)
                                         return <td class="bool-true">Yes</td>;
-                                    }
-
-                                    if (val === false) {
+                                    if (val === false)
                                         return <td class="bool-false">No</td>;
-                                    }
-
-                                    if (Array.isArray(val)) {
+                                    if (Array.isArray(val))
                                         return <td>{val.join(", ")}</td>;
-                                    }
 
                                     if (
                                         typeof val === "string" &&
@@ -203,7 +198,11 @@ const columns = getColumns();
                                     ) {
                                         return (
                                             <td>
-                                                <a href={val} target="_blank">
+                                                <a
+                                                    href={val}
+                                                    target="_blank"
+                                                    rel="noreferrer"
+                                                >
                                                     link
                                                 </a>
                                             </td>
