@@ -6,4 +6,4 @@ This project collects and normalizes feature data across chat platforms to make 
 
 All platforms are defined in `/data/platforms.json`.
 
-You can view the live dataset in spreadsheet form here: https://YOUR_PAGES_URL_HERE
+You can view the live dataset in spreadsheet form here: https://stribes.github.io/discord-alternatives/
