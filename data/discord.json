@@ -1,0 +1,70 @@
+{
+  "name": "Discord",
+  "website": "https://discord.com",
+  "repo": null,
+  "license": "Proprietary",
+  "open_source": false,
+  "features": {
+    "privacy": {
+      "encryption": "partial",
+      "data_harvesting_risk": "high",
+      "security_history": "mixed",
+      "kyc_required": "none",
+      "nsfw_support": "full"
+    },
+    "core_chat": {
+      "channels": "advanced",
+      "channel_history": "full",
+      "persistent_channel_order": true,
+      "threads": "advanced",
+      "pinned_posts": true,
+      "direct_messages": true,
+      "reactions": true,
+      "embeds": true,
+      "markdown": "advanced",
+      "message_editing": true,
+      "search": "advanced",
+      "typing_indicators": true
+    },
+    "voice_media": {
+      "voice_calls": true,
+      "video_calls": true,
+      "screen_sharing": true,
+      "streaming": true,
+      "noise_suppression": true,
+      "file_sharing": "full",
+      "soundboard": true
+    },
+    "community": {
+      "bots_plugins": "full",
+      "plural_kit_support": "full",
+      "custom_emotes": true,
+      "custom_stickers": true,
+      "polls": "advanced",
+      "events": "advanced",
+      "collaboration_tools": "basic"
+    },
+    "platform": {
+      "mobile": true,
+      "web": true,
+      "desktop": true
+    },
+    "architecture": {
+      "federation": "none",
+      "self_hosting": "none",
+      "discovery": "advanced",
+      "open_source": false
+    },
+    "adoption": {
+      "userbase": "high",
+      "performance": "medium",
+      "market_focus": "mixed",
+      "consumer_relationship": "closed"
+    },
+    "safety": {
+      "ai_safety": "partial",
+      "safety_concerns": "medium",
+      "transparency": "low"
+    }
+  }
+}

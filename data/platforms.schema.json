@@ -1,0 +1,142 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Open Source Discord Alternatives Schema",
+  "type": "object",
+  "required": ["name", "website", "open_source", "features"],
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Project name"
+    },
+    "website": {
+      "type": "string",
+      "format": "uri",
+      "description": "Official website or primary project page"
+    },
+    "repo": {
+      "type": "string",
+      "format": "uri",
+      "description": "Source code repository (GitHub, GitLab, etc.)"
+    },
+    "license": {
+      "type": "string",
+      "description": "Open-source license (e.g. MIT, AGPL-3.0, Apache-2.0)"
+    },
+    "open_source": {
+      "type": "boolean",
+      "const": true,
+      "description": "Must always be true for inclusion in this dataset"
+    },
+    "features": {
+      "type": "object",
+      "required": [
+        "privacy",
+        "core_chat",
+        "voice_media",
+        "community",
+        "platform",
+        "architecture",
+        "adoption",
+        "safety"
+      ],
+      "properties": {
+        "privacy": {
+          "type": "object",
+          "properties": {
+            "encryption": { "enum": ["none", "optional", "partial", "full"] },
+            "data_harvesting_risk": { "enum": ["low", "medium", "high"] },
+            "security_history": { "enum": ["good", "mixed", "poor"] },
+            "kyc_required": { "enum": ["none", "optional", "required"] },
+            "nsfw_support": { "enum": ["none", "limited", "full"] }
+          }
+        },
+
+        "core_chat": {
+          "type": "object",
+          "properties": {
+            "channels": { "enum": ["none", "basic", "advanced"] },
+            "channel_history": { "enum": ["none", "limited", "full"] },
+            "persistent_channel_order": { "type": "boolean" },
+            "threads": { "enum": ["none", "basic", "advanced"] },
+            "pinned_posts": { "type": "boolean" },
+            "direct_messages": { "type": "boolean" },
+            "reactions": { "type": "boolean" },
+            "embeds": { "type": "boolean" },
+            "markdown": { "enum": ["none", "basic", "advanced"] },
+            "message_editing": { "type": "boolean" },
+            "search": { "enum": ["none", "basic", "advanced"] },
+            "typing_indicators": { "type": "boolean" }
+          }
+        },
+
+        "voice_media": {
+          "type": "object",
+          "properties": {
+            "voice_calls": { "type": "boolean" },
+            "video_calls": { "type": "boolean" },
+            "screen_sharing": { "type": "boolean" },
+            "streaming": { "type": "boolean" },
+            "noise_suppression": { "type": "boolean" },
+            "file_sharing": { "enum": ["none", "limited", "full"] },
+            "soundboard": { "type": "boolean" }
+          }
+        },
+
+        "community": {
+          "type": "object",
+          "properties": {
+            "bots_plugins": { "enum": ["none", "limited", "full"] },
+            "plural_kit_support": { "enum": ["none", "partial", "full"] },
+            "custom_emotes": { "type": "boolean" },
+            "custom_stickers": { "type": "boolean" },
+            "polls": { "enum": ["none", "basic", "advanced"] },
+            "events": { "enum": ["none", "basic", "advanced"] },
+            "collaboration_tools": { "enum": ["none", "basic", "advanced"] }
+          }
+        },
+
+        "platform": {
+          "type": "object",
+          "properties": {
+            "mobile": { "type": "boolean" },
+            "web": { "type": "boolean" },
+            "desktop": { "type": "boolean" }
+          }
+        },
+
+        "architecture": {
+          "type": "object",
+          "properties": {
+            "federation": { "enum": ["none", "partial", "full"] },
+            "self_hosting": { "enum": ["none", "partial", "full"] },
+            "discovery": { "enum": ["none", "basic", "advanced"] },
+            "open_source": { "type": "boolean", "const": true }
+          }
+        },
+
+        "adoption": {
+          "type": "object",
+          "properties": {
+            "userbase": { "enum": ["low", "medium", "high"] },
+            "performance": { "enum": ["low", "medium", "high"] },
+            "market_focus": {
+              "enum": ["gaming", "general", "enterprise", "privacy", "mixed"]
+            },
+            "consumer_relationship": {
+              "enum": ["closed", "neutral", "open", "community-driven"]
+            }
+          }
+        },
+
+        "safety": {
+          "type": "object",
+          "properties": {
+            "ai_safety": { "enum": ["none", "partial", "yes"] },
+            "safety_concerns": { "enum": ["low", "medium", "high"] },
+            "transparency": { "enum": ["low", "medium", "high"] }
+          }
+        }
+      }
+    }
+  }
+}
