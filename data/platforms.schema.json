@@ -27,6 +27,7 @@
       "const": true,
       "description": "Must always be true for inclusion in this dataset"
     },
+
     "features": {
       "type": "object",
       "required": [
@@ -43,87 +44,181 @@
         "privacy": {
           "type": "object",
           "properties": {
-            "encryption": { "enum": ["none", "optional", "partial", "full"] },
-            "data_harvesting_risk": { "enum": ["low", "medium", "high"] },
-            "security_history": { "enum": ["good", "mixed", "poor"] },
-            "kyc_required": { "enum": ["none", "optional", "required"] },
-            "nsfw_support": { "enum": ["none", "limited", "full"] }
+            "encryption": {
+              "enum": ["none", "optional", "partial", "full", "unknown"]
+            },
+            "data_harvesting_risk": {
+              "enum": ["low", "medium", "high", "unknown"]
+            },
+            "security_history": {
+              "enum": ["good", "mixed", "poor", "unknown"]
+            },
+            "kyc_required": {
+              "enum": ["none", "optional", "required", "unknown"]
+            },
+            "nsfw_support": {
+              "enum": ["none", "limited", "full", "unknown"]
+            }
           }
         },
 
         "core_chat": {
           "type": "object",
           "properties": {
-            "channels": { "enum": ["none", "basic", "advanced"] },
-            "channel_history": { "enum": ["none", "limited", "full"] },
-            "persistent_channel_order": { "type": "boolean" },
-            "threads": { "enum": ["none", "basic", "advanced"] },
-            "pinned_posts": { "type": "boolean" },
-            "direct_messages": { "type": "boolean" },
-            "reactions": { "type": "boolean" },
-            "embeds": { "type": "boolean" },
-            "markdown": { "enum": ["none", "basic", "advanced"] },
-            "message_editing": { "type": "boolean" },
-            "search": { "enum": ["none", "basic", "advanced"] },
-            "typing_indicators": { "type": "boolean" }
+            "channels": {
+              "enum": ["none", "basic", "advanced", "unknown"]
+            },
+            "channel_history": {
+              "enum": ["none", "limited", "full", "unknown"]
+            },
+            "persistent_channel_order": {
+              "type": "boolean"
+            },
+            "threads": {
+              "enum": ["none", "basic", "advanced", "unknown"]
+            },
+            "pinned_posts": {
+              "type": "boolean"
+            },
+            "direct_messages": {
+              "type": "boolean"
+            },
+            "reactions": {
+              "type": "boolean"
+            },
+            "embeds": {
+              "type": "boolean"
+            },
+            "markdown": {
+              "enum": ["none", "basic", "advanced", "unknown"]
+            },
+            "message_editing": {
+              "type": "boolean"
+            },
+            "search": {
+              "enum": ["none", "basic", "advanced", "unknown"]
+            },
+            "typing_indicators": {
+              "type": "boolean"
+            }
           }
         },
 
         "voice_media": {
           "type": "object",
           "properties": {
-            "voice_calls": { "type": "boolean" },
-            "video_calls": { "type": "boolean" },
-            "screen_sharing": { "type": "boolean" },
-            "streaming": { "type": "boolean" },
-            "noise_suppression": { "type": "boolean" },
-            "file_sharing": { "enum": ["none", "limited", "full"] },
-            "soundboard": { "type": "boolean" }
+            "voice_calls": {
+              "type": "boolean"
+            },
+            "video_calls": {
+              "type": "boolean"
+            },
+            "screen_sharing": {
+              "type": "boolean"
+            },
+            "streaming": {
+              "type": "boolean"
+            },
+            "noise_suppression": {
+              "type": "boolean"
+            },
+            "file_sharing": {
+              "enum": ["none", "limited", "full", "unknown"]
+            },
+            "soundboard": {
+              "type": "boolean"
+            }
           }
         },
 
         "community": {
           "type": "object",
           "properties": {
-            "bots_plugins": { "enum": ["none", "limited", "full"] },
-            "plural_kit_support": { "enum": ["none", "partial", "full"] },
-            "custom_emotes": { "type": "boolean" },
-            "custom_stickers": { "type": "boolean" },
-            "polls": { "enum": ["none", "basic", "advanced"] },
-            "events": { "enum": ["none", "basic", "advanced"] },
-            "collaboration_tools": { "enum": ["none", "basic", "advanced"] }
+            "bots_plugins": {
+              "enum": ["none", "limited", "full", "unknown"]
+            },
+            "plural_kit_support": {
+              "enum": ["none", "partial", "full", "unknown"]
+            },
+            "custom_emotes": {
+              "type": "boolean"
+            },
+            "custom_stickers": {
+              "type": "boolean"
+            },
+            "polls": {
+              "enum": ["none", "basic", "advanced", "unknown"]
+            },
+            "events": {
+              "enum": ["none", "basic", "advanced", "unknown"]
+            },
+            "collaboration_tools": {
+              "enum": ["none", "basic", "advanced", "unknown"]
+            }
           }
         },
 
         "platform": {
           "type": "object",
           "properties": {
-            "mobile": { "type": "boolean" },
-            "web": { "type": "boolean" },
-            "desktop": { "type": "boolean" }
+            "mobile": {
+              "type": "boolean"
+            },
+            "web": {
+              "type": "boolean"
+            },
+            "desktop": {
+              "type": "boolean"
+            }
           }
         },
 
         "architecture": {
           "type": "object",
           "properties": {
-            "federation": { "enum": ["none", "partial", "full"] },
-            "self_hosting": { "enum": ["none", "partial", "full"] },
-            "discovery": { "enum": ["none", "basic", "advanced"] },
-            "open_source": { "type": "boolean", "const": true }
+            "federation": {
+              "enum": ["none", "partial", "full", "unknown"]
+            },
+            "self_hosting": {
+              "enum": ["none", "partial", "full", "unknown"]
+            },
+            "discovery": {
+              "enum": ["none", "basic", "advanced", "unknown"]
+            },
+            "open_source": {
+              "type": "boolean",
+              "const": true
+            }
           }
         },
 
         "adoption": {
           "type": "object",
           "properties": {
-            "userbase": { "enum": ["low", "medium", "high"] },
-            "performance": { "enum": ["low", "medium", "high"] },
+            "userbase": {
+              "enum": ["low", "medium", "high", "unknown"]
+            },
+            "performance": {
+              "enum": ["low", "medium", "high", "unknown"]
+            },
             "market_focus": {
-              "enum": ["gaming", "general", "enterprise", "privacy", "mixed"]
+              "enum": [
+                "gaming",
+                "general",
+                "enterprise",
+                "privacy",
+                "mixed",
+                "unknown"
+              ]
             },
             "consumer_relationship": {
-              "enum": ["closed", "neutral", "open", "community-driven"]
+              "enum": [
+                "closed",
+                "neutral",
+                "open",
+                "community-driven",
+                "unknown"
+              ]
             }
           }
         },
@@ -131,9 +226,15 @@
         "safety": {
           "type": "object",
           "properties": {
-            "ai_safety": { "enum": ["none", "partial", "yes"] },
-            "safety_concerns": { "enum": ["low", "medium", "high"] },
-            "transparency": { "enum": ["low", "medium", "high"] }
+            "ai_safety": {
+              "enum": ["none", "partial", "yes", "unknown"]
+            },
+            "safety_concerns": {
+              "enum": ["low", "medium", "high", "unknown"]
+            },
+            "transparency": {
+              "enum": ["low", "medium", "high", "unknown"]
+            }
           }
         }
       }
