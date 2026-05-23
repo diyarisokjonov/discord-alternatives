@@ -1,7 +1,9 @@
 {
   "name": "discord-alternatives",
+  "author": {"name": "stribes", "email": "stribes@tutanota.de"},
+  "license": "MIT",
   "type": "module",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "engines": {
     "node": ">=22.12.0"
   },
